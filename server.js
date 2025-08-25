@@ -19,10 +19,12 @@ mongoose.connect(process.env.MONGO_URI, {
 const authRoutes = require('./Routes/AuthRoutes');
 const examRoutes = require('./Routes/ExamRoutes');
 const answerRoutes = require('./Routes/AnswerRoute');
+const adminRoutes = require("./Routes/Admin/adminRoutes");
 
 app.use('/api/auth', authRoutes);
 app.use('/api/exams', examRoutes);
 app.use('/api/answers', answerRoutes);
+app.use("/api/admin", adminRoutes);
 
 // Health
 app.get('/', (req, res) => res.send("🚀 Exam API running"));
